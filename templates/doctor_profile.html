@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiverse user</title>
+
+    <!----------- Fontawesome CDN --------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!------------- Google Fonts ------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./asset/css/style.css">
+
+</head>
+<body>
+    
+    <section class="main_section">
+        <div class="mycontainer">
+            <div class="main_body">
+                <!---------- Sidebar -------->
+                <div class="sidebar d-none d-lg-block">
+                    <div class="sitebar_layer"></div>
+                    <div class="sidebar_inner_main">
+                        <div class="logo_div">
+                            <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo 1.png" alt=""></a>
+                        </div>
+                        <ul class="nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                            <!-- symtomp -->
+                            <li class="nav-item" role="presentation">
+                                <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
+                            </li>
+                            <!-- Symtomp history -->
+                            <li class="nav-item" role="presentation">
+                                <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                            </li>
+
+                            <!---------- Hospitals ------->
+                            <li class="nav-item" role="presentation">
+                                <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
+                            </li>
+
+                                <!-- patient profile -->
+                            <li class="nav-item" role="presentation">
+                                <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                            </li>
+
+
+                                <!-- doctor profile -->
+                            <li class="nav-item" role="presentation">
+                                <a href="doctor_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Doctor Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!----------- Mobile Sitebar ------------->
+                <div class="mobile_sitebar row d-lg-none">
+                    <div class="sitebar_layer"></div>
+                    <div class="">
+                        <div class="offcanvas offcanvas-start" id="myoffcanvas">
+                            <div class="logo_div offcanvas-header">
+                                <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo 1.png" alt=""></a>
+                                <button type="button" class="" data-bs-dismiss="offcanvas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                                <!-- symtomp -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
+                                </li>
+                                <!-- Symtomp history -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                                </li>
+
+                                <!---------- Hospitals ------->
+                                <li class="nav-item" role="presentation">
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
+                                </li>
+
+                                <!-- patient profile -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                                </li>
+
+                                <!-- doctor profile -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="doctor_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Doctor Profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--------- Main body ----------------->
+                <!----------------- Doctor Content ------------>
+                <div class="main_content">
+                    <div class="main">
+                        <div class="patient_content">
+                            <div class="patient_content_inner">
+                                <button class="offcanvas_toggle_btn d-lg-none" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
+                                <!-- Doctor Body -->
+                                <div class="patient_content_body">
+                                    <div class="doctor_body_inner row">
+                                        <!-- left side div -->
+                                        <div class="doctor_left_main col-xl-8">
+                                            <div class="dr_left_inner">
+                                                <div class="dr_left_top">
+                                                    <!-- Dr. Profile -->
+                                                    <div class="dr_profile">
+                                                        <div class="dr_name_pic">
+                                                            <img src="./asset/images/drProfile/Rectangle12.png" alt="">
+                                                            <h2 class="dr_name">Jane Cooper</h2>
+                                                        </div>
+                                                        <div class="dr_infos">
+                                                            <div class="dr_info_top">
+                                                                <small class="dr_degree">Degree</small>
+                                                                <h3 class="dr_subTitles">MBBS, FCPS (Medicine),MD (Cardiology), FACC (USA)</h3>
+                                                            </div>
+                                                            <div class="dr_info_middle">
+                                                                <table  class="do_infomInner">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <small class="dr_light_trxt">Age</small>
+                                                                            <h2 class="dr_title_big">38 Y</h2>
+                                                                        </td>
+                                                                        <td>
+                                                                            <small class="dr_light_trxt">Current Position</small>
+                                                                            <h2 class="dr_subTitle">Cardiologist</h2>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <small class="dr_light_trxt">experience</small>
+                                                                            <h2 class="dr_title_big">8 Y</h2>
+                                                                        </td>
+                                                                        <td>
+                                                                            <small class="dr_light_trxt">Specialty</small>
+                                                                            <h2 class="dr_subTitle">Cardiologist</h2>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <div class="dr_info_bottom">
+                                                                <small class="dr_light_trxt">Department</small>
+                                                                <h3 class="dr_subTitle">Gynecologist & Obstetrician</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Doctor activity percent -->
+                                                    <div class="dr_activity_percent">
+                                                        <div class="dr_percent">
+                                                            <div class="dr_interaction">
+                                                                <div class="progress_circle less" style="--i:51;--clr:#3F8FDF;">
+                                                                    <p class="progress__number">51%</p>
+                                                                </div>
+                                                                <h3 class="dr_subTitle">patient interaction</h3>
+                                                            </div>
+                                                            <div class="dr_underTreatment">
+                                                                <div class="progress_circle" style="--i:75;--clr:#142C44;">
+                                                                    <p class=" progress__number">75%</p>
+                                                                </div>
+                                                                <h3 class="dr_subTitle">Patient under treatment</h3>                                    
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr_activity">
+                                                            <!-- Weekly Activity Chart -->
+                                                            <form class="dr_weekly_activity" action="#">
+                                                                <div class="dr_weekly_top">
+                                                                    <h3 class="dr_activity_title">your activity</h3>
+                                                                    <select class="dr_weekly_select" name="#" id="#">
+                                                                        <option value="weekly" selected>Weekly</option>
+                                                                        <option value="Daily">Daily</option>
+                                                                        <option value="manthly">Monthly</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="dr_weekly_bottom">
+                                                                    <div class="weekly_bottom_left">
+                                                                        <p>100%</p>
+                                                                        <p>50%</p>
+                                                                        <p>25%</p>
+                                                                        <p>0%</p>
+                                                                    </div>
+                                                                    <div class="weekly_bottom_right">
+                                                                        <div class="mo">
+                                                                            <div class="light_div_mo"></div>
+                                                                            <div class="color_div_mo"></div>
+                                                                            <p class="wekly_text">Mo</p>
+                                                                        </div>
+                                                                        <div class="tu">
+                                                                            <div class="light_div_tu"></div>
+                                                                            <div class="color_div_tu"></div>
+                                                                            <p class="wekly_text">Tu</p>
+                                                                        </div>
+                                                                        <div class="we">
+                                                                            <div class="light_div_we"></div>
+                                                                            <div class="color_div_we"></div>
+                                                                            <p class="wekly_text">We</p>
+                                                                        </div>
+                                                                        <div class="Th">
+                                                                            <div class="light_div_th"></div>
+                                                                            <div class="color_div_th"></div>
+                                                                            <p class="wekly_text">Th</p>
+                                                                        </div>
+                                                                        <div class="Fr">
+                                                                            <div class="light_div_fr"></div>
+                                                                            <div class="color_div_fr"></div>
+                                                                            <p class="wekly_text">Fr</p>
+                                                                        </div>
+                                                                        <div class="Sa">
+                                                                            <div class="color_div_sa"></div>
+                                                                            <div class="light_div_sa"></div>
+                                                                            <p class="wekly_text">Sa</p>
+                                                                        </div>
+                                                                        <div class="Su">
+                                                                            <div class="light_div_su"></div>
+                                                                            <div class="color_div_su"></div>
+                                                                            <p class="wekly_text">Su</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Doctor Activity Section -->
+                                                <div class="dr_left_bottom">
+                                                    <div class="drL_bottom_inner">
+                                                        <div class="drActivity_top">
+                                                            <h3 class="dr_activity_title">your activity</h3>
+                                                            <select class="activity_year_select" name="#" id="#">
+                                                                <option class="year_select" value="year" selected>Year</option>
+                                                                <option class="year_select" value="2020">2020</option>
+                                                                <option class="year_select" value="2021">2021</option>
+                                                                <option class="year_select" value="2022">2022</option>
+                                                                <option class="year_select" value="2023">2023</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="drActivity_middle">
+                                                            <div class="dr_sercle_div"></div>
+                                                            <div class="dr_border_div"></div>
+                                                            <img class="activity_wm" src="./asset/images/drProfile/Vector11.png" alt="doctor activity">
+                                                            <div class="dr_middleIdiv">
+                                                                <p class="Dnumber">100</p>
+                                                                <div class="Dborder"></div>
+                                                            </div>
+                                                            <div class="dr_middleIdiv">
+                                                                <p class="Dnumber">75</p>
+                                                                <div class="Dborder"></div>
+                                                            </div>
+                                                            <div class="dr_middleIdiv">
+                                                                <p class="Dnumber">50</p>
+                                                                <div class="Dborder"></div>
+                                                            </div>
+                                                            <div class="dr_middleIdiv">
+                                                                <p class="Dnumber">25</p>
+                                                                <div class="Dborder"></div>
+                                                            </div>
+                                                            <div class="dr_middleIdiv">
+                                                                <p class="Dnumber">0</p>
+                                                                <div class="Dborder"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="drActivity_bottom">
+                                                            <div class="drActivity_months">
+                                                                <p class="months_single">Jan</p>
+                                                                <p class="months_single">Feb</p>
+                                                                <p class="months_single">Mar</p>
+                                                                <p class="months_single">Apr</p>
+                                                                <p class="months_single">May</p>
+                                                                <p class="months_single">Jun</p>
+                                                                <p class="months_single">Jul</p>
+                                                                <p class="months_single">Aug</p>
+                                                                <p class="months_single">Sep</p>
+                                                                <p class="months_single">Nov</p>
+                                                                <p class="months_single">Dec</p>
+                                                            </div>
+                                                        </div>                                               
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- right side div -->
+                                        <div class="doctor_right_main col-xl-4">
+                                            <div class="doctor_right_inner">
+                                                <div class="doctor_right_top">
+                                                    <!-- Doctor Calener -->
+                                                    <div class="dr_calender">
+                                                        <h3 class="dr_calender_title">Doctor appointments</h3>
+                                                        <div class="dr_calender_form">
+                                                            <form class="calender_form" action="#">
+                                                                <div class="dr_calender_slide">
+                                                                    <button class="calender_left_arrow dr_calender_slide_arrow"><i class="fa-solid fa-angle-left"></i></button>
+                                                                    <div class="dr_calender_years">
+                                                                        <p class="dr_calender_year_contents ">January 2020</p>
+                                                                        <p class="dr_calender_year_contents ">February 2020</p>
+                                                                        <p class="dr_calender_year_contents ">March 2020</p>
+                                                                        <p class="dr_calender_year_contents">April 2020</p>                      
+                                                                        <p class="dr_calender_year_contents">May 2020</p>
+                                                                        <p class="dr_calender_year_contents">June 2020</p>
+                                                                        <p class="dr_calender_year_contents">July 2020</p>
+                                                                        <p class="dr_calender_year_contents">august 2020</p>
+                                                                        <p class="dr_calender_year_contents">September 2020</p>
+                                                                        <p class="dr_calender_year_contents">October 2020</p>
+                                                                        <p class="dr_calender_year_contents">November 2020</p>
+                                                                        <p class="dr_calender_year_contents translate_0">December 2020</p>
+                                                                    </div>
+                                                                    <button class="calender_right_arrow dr_calender_slide_arrow"><i class="fa-solid fa-angle-right"></i></button>
+                                                                </div>
+                                                                
+
+                                                                <div class="calender_data">
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="Mo">
+                                                                        <input class="calender_input cNumber" type="submit" value="1">
+                                                                        <input class="calender_input cNumber" type="submit" value="8">
+                                                                        <input class="calender_input cNumber" type="submit" value="15">
+                                                                        <input class="calender_input cNumber" type="submit" value="22">
+                                                                        <input class="calender_input cNumber" type="submit" value="29">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="Tu">
+                                                                        <input class="calender_input cNumber" type="submit" value="2">
+                                                                        <input class="calender_input cNumber" type="submit" value="9">
+                                                                        <input class="calender_input cNumber" type="submit" value="16">
+                                                                        <input class="calender_input cNumber" type="submit" value="23">
+                                                                        <input class="calender_input cNumber" type="submit" value="30">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="We">
+                                                                        <input class="calender_input cNumber" type="submit" value="3">
+                                                                        <input class="calender_input cNumber" type="submit" value="10">
+                                                                        <input class="calender_input cNumber" type="submit" value="17">
+                                                                        <input class="calender_input cNumber" type="submit" value="24">
+                                                                        <input class="calender_input cNumber" type="submit" value="31">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="th">
+                                                                        <input class="calender_input cNumber" type="submit" value="4">
+                                                                        <input class="calender_input cNumber" type="submit" value="11">
+                                                                        <input class="calender_input cNumber calender_data_focus" type="submit" value="18">
+                                                                        <input class="calender_input cNumber" type="submit" value="25">
+                                                                        <input class="calender_input disable" type="submit" value="1">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="Fr">
+                                                                        <input class="calender_input cNumber" type="submit" value="5">
+                                                                        <input class="calender_input cNumber" type="submit" value="12">
+                                                                        <input class="calender_input cNumber" type="submit" value="19">
+                                                                        <input class="calender_input cNumber" type="submit" value="26">
+                                                                        <input class="calender_input disable" type="submit" value="2">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="Sa">
+                                                                        <input class="calender_input cNumber " type="submit" value="6">
+                                                                        <input class="calender_input cNumber " type="submit" value="13">
+                                                                        <input class="calender_input cNumber " type="submit" value="20">
+                                                                        <input class="calender_input cNumber " type="submit" value="27">
+                                                                        <input class="calender_input disable" type="submit" value="3">
+                                                                    </div>
+                                                                    <div class="calender_data_inner">
+                                                                        <input class="calender_input" type="submit" value="Su">
+                                                                        <input class="calender_input cNumber " type="submit" value="7">
+                                                                        <input class="calender_input cNumber " type="submit" value="14">
+                                                                        <input class="calender_input cNumber " type="submit" value="21">
+                                                                        <input class="calender_input cNumber " type="submit" value="28">
+                                                                        <input class="calender_input disable" type="submit" value="4">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="doctor_right_bottom">
+                                                    <div class="dr_bottom_inner">
+                                                        <!-- Dentist -->
+                                                        <a class="dr_chambers chamber1" href="#">
+                                                            <img class="dr_water_mark" src="./asset/images/drProfile/Union.png" alt="">
+                                                            <div class="dr_chamber">
+                                                                <div class="icon_div">
+                                                                    <img src="./asset/images/drProfile/icon-park-solid_teeth.png" alt="">
+                                                                </div>
+                                                                <div class="content_div">
+                                                                    <h3 class="dr_degree">Dentist</h3>
+                                                                    <p class="dr_h_name">Jacob Jones</p>
+                                                                    <p class="visit_time">
+                                                                        <span>1.08 pm</span>-
+                                                                        <span>2.34 pm</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow_div">
+                                                                <i class="fa-solid fa-right-long"></i>
+                                                            </div>
+                                                        </a>
+                                                        <!-- Cardiology -->
+                                                        <a class="dr_chambers chamber2" href="#">
+                                                            <img class="dr_water_mark" src="./asset/images/drProfile/Union.png" alt="">
+                                                            <div class="dr_chamber">
+                                                                <div class="icon_div">
+                                                                    <img src="./asset/images/drProfile/Vector.png" alt="">
+                                                                </div>
+                                                                <div class="content_div">
+                                                                    <h3 class="dr_degree">Cardiology</h3>
+                                                                    <p class="dr_h_name">Cameron Williamson</p>
+                                                                    <p class="visit_time">
+                                                                        <span>02:34 am</span>-
+                                                                        <span>01:08 pm</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow_div">
+                                                                <i class="fa-solid fa-right-long"></i>
+                                                            </div>
+                                                        </a>
+                                                        <!-- Physcian -->
+                                                        <a class="dr_chambers chamber3" href="#">
+                                                            <img class="dr_water_mark" src="./asset/images/drProfile/Union.png" alt="">
+                                                            <div class="dr_chamber">
+                                                                <div class="icon_div">
+                                                                    <img src="./asset/images/drProfile/maki_doctor.png" alt="">
+                                                                </div>
+                                                                <div class="content_div">
+                                                                    <h3 class="dr_degree">Physcian</h3>
+                                                                    <p class="dr_h_name">Cody Fisher</p>
+                                                                    <p class="visit_time">
+                                                                        <span>05:49 pm</span>-
+                                                                        <span>12:23 pm</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow_div">
+                                                                <i class="fa-solid fa-right-long"></i>
+                                                            </div>
+                                                        </a>
+                                                        <!-- Annette Black -->
+                                                        <a class="dr_chambers chamber4" href="#">
+                                                            <img class="dr_water_mark" src="./asset/images/drProfile/Union.png" alt="">
+                                                            <div class="dr_chamber">
+                                                                <div class="icon_div">
+                                                                    <img src="./asset/images/drProfile/Vector1.png" alt="">
+                                                                </div>
+                                                                <div class="content_div">
+                                                                    <h3 class="dr_degree">Annette Black</h3>
+                                                                    <p class="dr_h_name">Brainology</p>
+                                                                    <p class="visit_time">
+                                                                        <span>12:23 pm</span>-
+                                                                        <span>05:49 pm</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow_div">
+                                                                <i class="fa-solid fa-right-long"></i>
+                                                            </div>
+                                                        </a>
+                                                        <!-- Orthopedics -->
+                                                        <a class="dr_chambers chamber5" href="#">
+                                                            <img class="dr_water_mark" src="./asset/images/drProfile/Union.png" alt="">
+                                                            <div class="dr_chamber">
+                                                                <div class="icon_div">
+                                                                    <img src="./asset/images/drProfile/Vector2.png" alt="">
+                                                                </div>
+                                                                <div class="content_div">
+                                                                    <h3 class="dr_degree">Orthopedics</h3>
+                                                                    <p class="dr_h_name">Annette Black</p>
+                                                                    <p class="visit_time">
+                                                                        <span>12:01 pm</span>-
+                                                                        <span>05:49 pm</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow_div">
+                                                                <i class="fa-solid fa-right-long"></i>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- jQuery (ensure it's loaded before Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./asset/js/doctor_profile.js"></script>
+
+</body>
+</html>

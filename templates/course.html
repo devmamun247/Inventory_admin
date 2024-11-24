@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovative admin</title>
+
+    <!----------- Fontawesome CDN --------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+    <!------------- Google Fonts ------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!------------ Bootstrap CSS ----------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+
+
+    <!------------ Custom CSS -------------->
+    <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+<body>
+    
+    <section class="main_section">
+        <div class="mycontainer">
+            <div class="main_body">
+                <!---------- Sidebar -------->
+                <div class="sidebar d-none d-lg-block">
+                    <div class="sitebar_layer"></div>
+                    <div class="sidebar_inner_main">
+                        <div class="logo_div">
+                            <a href="index.html"><img src="./asset/images/logo/logoBlack-removebg-preview.png" alt=""></a>
+                        </div>
+                        <ul class="nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                            <!-- symtomp -->
+                            <li class="nav-item" role="presentation">
+                                <a href="index.html" class="nav-link_aside ">
+                                    <i class="left_i fa-solid fa-gauge-high"></i>
+                                    <span class="menu_text">Dahsboard</span>
+                                </a>
+                            </li>
+                            <!-- Service -->
+                            <li class="nav-item sub_manu_main" role="presentation">
+
+                                <!-- Sub menu -->
+                                <div class="sub_menu_head nav-link_aside">
+                                    <div class="menu_head_left">
+                                        <i class="left_i fa-brands fa-servicestack"></i>
+                                        <p class="sub_head_text">Service</p>
+                                    </div>
+                                    <i class="right_icon_sub fa-solid fa-chevron-down"></i>
+                                </div>
+                                <ul class="sub_menu_list">
+                                    <li class="sub_item nav-item"><a href="#" class="sub_link nav-link_aside">
+                                        <i class="left_i fa-solid fa-code"></i>
+                                        Development
+                                    </a></li>
+                                    <li class="sub_item nav-item"><a href="#" class="sub_link nav-link_aside">
+                                        <i class="left_i fa-solid fa-graduation-cap"></i>
+                                        Training
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gallery -->
+                            <li class="nav-item" role="presentation">
+                                <a href="index.html" class="nav-link_aside">
+                                    <i class="left_i fa-solid fa-image"></i>
+                                    <span class="menu_text">Gallery</span>
+                                </a>
+                            </li>
+
+                            <!-- Task -->
+                            <li class="nav-item" role="presentation">
+                                <a href="task_upload.html" class="nav-link_aside">
+                                    <i class="left_i fa-solid fa-database fa-fw"></i>
+                                    <span class="menu_text">Task Upload</span>
+                                </a>
+                            </li>
+
+                            <!-- Course -->
+                            <li class="nav-item" role="presentation">
+                                <a href="course.html" class="nav-link_aside active">
+                                    <i class="left_i fa-solid fa-image"></i>
+                                    <span class="menu_text">Course</span>
+                                </a>
+                            </li>
+                            <!-- Course Curriculam -->
+                            <li class="nav-item sub_manu_main" role="presentation">
+
+                                <!-- Sub menu -->
+                                <div class="sub_menu_head nav-link_aside">
+                                    <div class="menu_head_left">
+                                        <i class="fa-sharp fa-solid fa-bars"></i>
+                                        <p class="sub_head_text">Curriculam</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <ul class="sub_menu_list">
+                                    <li class="sub_item nav-item"><a href="curriculam_upload.html" class="sub_link nav-link_aside">
+                                        <i class="fa-solid fa-upload"></i>
+                                        Curriculam upload
+                                    </a></li>
+                                    <li class="sub_item nav-item"><a href="curriculam_view.html" class="sub_link nav-link_aside active">
+                                        <i class="fa-solid fa-list"></i>
+                                        Curriculam view
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!----------- Mobile Sitebar ------------->
+                <div class="mobile_sitebar row d-lg-none">
+                    <div class="sitebar_layer"></div>
+                    <div class="">
+                        <div class="offcanvas offcanvas-start" id="myoffcanvas">
+                            <div class="logo_div offcanvas-header">
+                                <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo1.png" alt=""></a>
+                                <button type="button" class="" data-bs-dismiss="offcanvas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                                <!-- symtomp -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptom</a>
+                                </li>
+                                <!-- Symtomp history -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                                </li>
+
+                                <!---------- Hospitals ------->
+                                <li class="nav-item" role="presentation">
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt=""> Hospitals</a>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                                </li>
+
+                                <!-- doctor profile -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="doctor_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Doctor Profile</a>
+                                </li>
+                            </ul>
+                        </div>  
+                    </div>
+                </div>
+
+                <!--------- Main body ----------------->
+                <!----------------- course Content ------------>
+                <div class="main_content">
+                    <div class="main">
+                        <div class="content_inner">
+
+                            <!-- Header -->
+                            <div class="hospital_header_main">
+                                    <div class="hospital_content_header symtomp_header">
+                                        <button class="offcanvas_toggle_btn d-lg-none" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
+                                        <!-- <div class="hospital_search symtomp_h_form_div">
+                                            <form action="#">
+                                                <input class="symptom_search" type="search" placeholder="search">
+                                                <button class="symptom_search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                            </form>
+                                        </div> -->
+                                        <!-- Profile -->
+                                        <div class="hospital_profile">
+                                            <!-- <button class="symptom_search_btn_profile"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                            <p><i class="fa-sharp fa-solid fa-bell"></i></p>
+                                            <a class="user_pannel" href="#"><img src="./asset/images/profile/Anower.jpg" alt=""></a>
+                                            <div class="user_account">
+                                                <a class="dahsboard btn_blue" href="#">User Name</a>
+                                                <a class="user_logout btn_blue" href="#">Log Out</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            <!-- course Body -->
+                            <div class="gallery_main">
+                                <div class="gallery_inner">
+
+                                    <h1 class="title_main my-2">Courses</h1>
+
+                                    <!-- course upload form -->
+                                    <form action="#" class="gallery_upload_form">
+                                        <p class="p_header_top">Course upload form</p>
+                                        <div class="gallery_id gFormInner">
+                                            <label for="Cid" class="gForm_label">course id:</label>
+                                            <input type="text" class="Gid" id="Cid">
+                                        </div>
+                                        <div class="gallery_name gFormInner">
+                                            <label for="Ctitle" class="gForm_label">Course name:</label>
+                                            <input type="text" class="Gtitle" id="Ctitle">
+                                        </div>
+                                        <div class="gallery_name gFormInner">
+                                            <label for="Cprice" class="gForm_label">Course price:</label>
+                                            <input type="text" class="Gtitle" id="Cprice">
+                                        </div>
+                                        <div class="gallery_name gFormInner">
+                                            <label for="Ccontity" class="gForm_label">Class contity:</label>
+                                            <input type="text" class="Gtitle" id="Ccontity">
+                                        </div>
+                                        <div class="gallery_img ">
+                                            <div class="gallery_img_iiner gFormInner">
+                                                <label for="Gimg" class="gForm_label">Image:</label>
+                                                <input type="file" class="Gimg" id="Gimg">
+                                            </div>
+                                            <div class="gallery_img_note">
+                                                <p class="admin_form_note">Image size will be 430px*750px</p>
+                                            </div>
+                                        </div>
+                                        <div class="form_submit_div">
+                                            <button type="submit" class="GformSubmit btn_blue">Submit</button>                        
+                                            <button type="reset" class="GformSubmit btn_yellow">Submit</button>                                                         
+                                        </div>
+                                    </form>
+
+                                    <!-- Image showing table -->
+                                    <div class="img_show_admin">
+                                        <p class="p_header_top">Course listing table</p>
+                                        <div class="img_show_aHeader">
+                                            <div class="show_aHeader_left">
+                                                <p class="small_text">Show</p>
+                                                <select name="#" id="#" class="small_text imgShoeSelect">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                                <p class="small_text">images</p>
+                                            </div>
+                                            <div class="show_aHeader_right">
+                                                <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+                                            </div>
+                                        </div>
+                                        <table class="img_showing_table">
+                                            <thead class="img_tHead">
+                                                <tr class="img_th_row">
+                                                    <th class="img_th_inner py-2">Id:</th>
+                                                    <th class="img_th_inner py-2">Name</th>
+                                                    <th class="img_th_inner py-2">Price</th>
+                                                    <th class="img_th_inner py-2">Clases</th>
+                                                    <th class="img_th_inner py-2">Image</th>
+                                                    <th class="img_th_inner py-2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="img_tBody" id="tableBody">
+
+                                                <!-- Single row of img view -->
+                                                <tr class="img_tb_row">
+                                                    <th class="img_th_inner">1</th>
+                                                    <td class="img_tb_data">Course CV</td>
+                                                    <td class="img_tb_data">500tk</td>
+                                                    <td class="img_tb_data">40 clases</td>
+                                                    <td class="img_tb_data"><img src="./asset/images/hospitals/BSHL1.webp" alt=""></td>
+                                                    <td class="img_tb_data action">
+
+                                                        <!-- Edit button -->
+                                                        <button class="admin_edit" id="Gedit_1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <!-- Edit modal -->
+                                                        <div class="Agallery_modal">
+                                                            <div class="Agallery_modal_inner">
+
+                                                                <!-- Modal header -->
+                                                                <div class="Agallery_modal_header">
+                                                                    <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                    <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                </div>
+
+                                                                <!-- MOdal body -->
+                                                                <div class="Agallery_modal_body">
+                                                                    <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmailc" class="form-label">Class contity</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmailc" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                        <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Delete button -->
+                                                        <button class="admin_delete"><i class="fa-solid fa-trash"></i></button>
+                                                        <!-- Delete notify modal -->
+                                                        <div class="Agallery_modal">
+                                                            <div class="Agallery_modal_inner">
+
+                                                                <!-- Modal header -->
+                                                                <div class="Agallery_modal_header">
+                                                                    <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                    <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                </div>
+
+                                                                <!-- MOdal body -->
+                                                                <div class="Agallery_modal_body">
+                                                                    <form>
+                                                                    <div class="mb-3">
+                                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="course ID" disabled>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                    </div>
+                                                                    
+                                                                    <div class="Dmodal_close_div">
+                                                                        <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                        <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                    </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Single row of img view -->
+                                                <tr class="img_tb_row">
+                                                    <th class="img_th_inner">2</th>
+                                                    <td class="img_tb_data">Course ML</td>
+                                                    <td class="img_tb_data">500tk</td>
+                                                    <td class="img_tb_data">40 clases</td>
+                                                    <td class="img_tb_data"><img src="./asset/images/hospitals/BSHL1.webp" alt=""></td>
+                                                    <td class="img_tb_data action">
+
+                                                        <!-- Edit btn -->
+                                                        <button class="admin_edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <!-- Edit modal -->
+                                                        <div class="Agallery_modal">
+                                                            <div class="Agallery_modal_inner">
+
+                                                                <!-- Modal header -->
+                                                                <div class="Agallery_modal_header">
+                                                                    <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                    <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                </div>
+
+                                                                <!-- MOdal body -->
+                                                                <div class="Agallery_modal_body">
+                                                                    <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmail3" class="form-label">Class contity</label>
+                                                                        <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                        <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Delete button -->
+                                                        <button class="admin_delete"><i class="fa-solid fa-trash"></i></button>
+                                                        <!-- Delete notify modal -->
+                                                        <div class="Agallery_modal">
+                                                            <div class="Agallery_modal_inner">
+
+                                                                <!-- Modal header -->
+                                                                <div class="Agallery_modal_header">
+                                                                    <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                    <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                </div>
+
+                                                                <!-- MOdal body -->
+                                                                <div class="Agallery_modal_body">
+                                                                    <form>
+                                                                    <div class="mb-3">
+                                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Course ID" disabled>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                    </div>
+                                                                    
+                                                                    <div class="Dmodal_close_div">
+                                                                        <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                        <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                    </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Single row of img view -->
+                                                <tr class="img_tb_row">
+                                                    <th class="img_th_inner">3</th>
+                                                    <td class="img_tb_data">Course CV</td>
+                                                    <td class="img_tb_data">500tk</td>
+                                                    <td class="img_tb_data">40 clases</td>
+                                                    <td class="img_tb_data"><img src="./asset/images/hospitals/BSHL1.webp" alt=""></td>
+                                                    <td class="img_tb_data action">
+                                                        <button class="admin_edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button class="admin_delete"><i class="fa-solid fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Single row of img view -->
+                                                <tr class="img_tb_row">
+                                                    <th class="img_th_inner">4</th>
+                                                    <td class="img_tb_data">Course CV</td>
+                                                    <td class="img_tb_data">500tk</td>
+                                                    <td class="img_tb_data">40 clases</td>
+                                                    <td class="img_tb_data"><img src="./asset/images/hospitals/BSHL1.webp" alt=""></td>
+                                                    <td class="img_tb_data action">
+                                                        <button class="admin_edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button class="admin_delete"><i class="fa-solid fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!------------- Bootstrap JS ------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <!------- Jquery cdn ------>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
+    <!-------------- Custom js ----------->
+    <script src="./asset/js/gallery.js"></script>
+    <script src="./asset/js/script.js"></script>
+
+</body>
+</html>

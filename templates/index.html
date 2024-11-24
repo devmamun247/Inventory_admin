@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<!--Load static start (Mamun)-->
+{% load static %}
+<!--Load static start (Mamun)-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <!----------- Fontawesome CDN --------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!------------- Google Fonts ------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!------------ Bootstrap CSS ----------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+
+    <!------------ Custom CSS -------------->
+    {% comment %} <link rel="stylesheet" href="./asset/css/style.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+</head>
+<body>
+    
+    <section class="main_section">
+        <div class="mycontainer">
+            <div class="main_body">
+                <!---------- Sidebar -------->
+                <div class="sidebar d-none d-lg-block">
+                    <div class="sitebar_layer"></div>
+                    <div class="sidebar_inner_main">
+                        <div class="logo_div">
+                            <a href="index.html"><img src="./asset/images/logo/logoBlack-removebg-preview.png" alt=""></a>
+                        </div>
+                        <ul class="nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                            <!-- symtomp -->
+                            <li class="nav-item" role="presentation">
+                                <a href="index.html" class="nav-link_aside active">
+                                    <i class="left_i fa-solid fa-gauge-high"></i>
+                                    <span class="menu_text">Dahsboard</span>
+                                </a>
+                            </li>
+
+                            <!-- Service -->
+                            <li class="nav-item sub_manu_main" role="presentation">
+
+                                <!-- Sub menu -->
+                                <div class="sub_menu_head nav-link_aside">
+                                    <div class="menu_head_left">
+                                        <i class="left_i fa-brands fa-servicestack"></i>
+                                        <p class="sub_head_text">Service</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <ul class="sub_menu_list">
+                                    <li class="sub_item nav-item"><a href="#" class="sub_link nav-link_aside">
+                                        <i class="left_i fa-solid fa-code"></i>
+                                        Development
+                                    </a></li>
+                                    <li class="sub_item nav-item"><a href="#" class="sub_link nav-link_aside">
+                                        <i class="left_i fa-solid fa-graduation-cap"></i>
+                                        Training
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Galeery -->
+                            <li class="nav-item" role="presentation">
+                                <a href="gallery.html" class="nav-link_aside">
+                                    <i class="left_i fa-solid fa-image"></i>
+                                    <span class="menu_text">Gallery</span>
+                                </a>
+                            </li>
+
+                            <!-- Task -->
+                            <li class="nav-item" role="presentation">
+                                <a href="task_upload.html" class="nav-link_aside">
+                                    <i class="left_i fa-solid fa-database fa-fw"></i>
+                                    <span class="menu_text">Task Upload</span>
+                                </a>
+                            </li>
+
+                            <!-- Course -->
+                            <li class="nav-item" role="presentation">
+                                <a href="course.html" class="nav-link_aside">
+                                    <i class="left_i fa-solid fa-image"></i>
+                                    <span class="menu_text">Course</span>
+                                </a>
+                            </li>
+
+                            <!-- Course Curriculam -->
+                            <li class="nav-item sub_manu_main" role="presentation">
+
+                                <!-- Sub menu -->
+                                <div class="sub_menu_head nav-link_aside">
+                                    <div class="menu_head_left">
+                                        <i class="fa-sharp fa-solid fa-bars"></i>
+                                        <p class="sub_head_text">Curriculam</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <ul class="sub_menu_list">
+                                    <li class="sub_item nav-item"><a href="curriculam_upload.html" class="sub_link nav-link_aside">
+                                        <i class="fa-solid fa-upload"></i>
+                                        Curriculam upload
+                                    </a></li>
+                                    <li class="sub_item nav-item"><a href="curriculam_view.html" class="sub_link nav-link_aside active">
+                                        <i class="fa-solid fa-list"></i>
+                                        Curriculam view
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!----------- Mobile Sitebar ------------->
+                <div class="mobile_sitebar row d-lg-none">
+                    <div class="sitebar_layer"></div>
+                    <div class="">
+                        <div class="offcanvas offcanvas-start" id="myoffcanvas">
+                            <div class="logo_div offcanvas-header">
+                                <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo1.png" alt=""></a>
+                                <button type="button" class="" data-bs-dismiss="offcanvas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                                <!-- symtomp -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptom</a>
+                                </li>
+                                <!-- Symtomp history -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                                </li>
+
+                                <!---------- Hospitals ------->
+                                <li class="nav-item" role="presentation">
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt=""> Hospitals</a>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                                </li>
+
+                                <!-- doctor profile -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="doctor_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Doctor Profile</a>
+                                </li>
+                            </ul>
+                        </div>  
+                    </div>
+                </div>
+
+                <!--------- Main body ----------------->
+                <!----------------- Symptom Content ------------>
+                <div class="main_content">
+                    <div class="main">
+                        <div class="content_inner">
+                            
+                            <!-- Header -->
+                            <div class="hospital_header_main">
+                                <div class="hospital_content_header symtomp_header">
+                                        <button class="offcanvas_toggle_btn d-lg-none" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
+                                        <h1 class="title_main">Dashboard</h1>
+                                        <div class="hospital_search symtomp_h_form_div">
+                                            <!-- <form action="#" class="header_search_form">
+                                                <input class="symptom_search" type="search" placeholder="search">
+                                                <button class="symptom_search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                            </form> -->
+                                        </div>
+                                        <!-- Profile -->
+                                        <div class="hospital_profile">
+                                            <!-- <button class="symptom_search_btn_profile"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                            <p><i class="fa-sharp fa-solid fa-bell"></i></p>
+                                            <a class="user_pannel" href="#"><img src="./asset/images/profile/Anower.jpg" alt=""></a>
+                                            <div class="user_account">
+                                                <a class="dahsboard btn_blue" href="#">User Name</a>
+                                                <a class="user_logout btn_blue" href="#">Log Out</a>
+                                            </div>
+                                        </div>
+                                    </div>       
+                            </div>
+
+                            <!-- Dashboard Body -->
+                            <div class="gallery_main">
+                                <div class="gallery_inner">
+
+                                    <!-- Farst row -->
+                                    <div class="visitors_main">
+
+                                        <!-- Visitors Single -->
+                                        <div class="visitor_inner user_ragister">
+                                            <div class="visitor_top">
+                                                <div class="visitor_info">
+                                                    <h2 class="visitor_count">60</h2>
+                                                    <p class="visitor_counter">User Registrations</p>
+                                                </div>
+                                                <div class="visitor_icon">
+                                                    <i class="fa-solid fa-user-plus"></i>
+                                                </div>
+                                            </div>
+                                            <div class="visitor_bottom">
+                                                <a href="#" class="visitor_link">
+                                                    <span>More info</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Visitors Single -->
+                                        <div class="visitor_inner uniq_visitor">
+                                            <div class="visitor_top">
+                                                <div class="visitor_info">
+                                                    <h2 class="visitor_count">50</h2>
+                                                    <p class="visitor_counter">Uniq Visitor</p>
+                                                </div>
+                                                <div class="visitor_icon">
+                                                    <i class="fa-solid fa-users"></i>
+                                                </div>
+                                            </div>
+                                            <div class="visitor_bottom">
+                                                <a href="#" class="visitor_link">
+                                                    <span>More info</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Visitors Single -->
+                                        <div class="visitor_inner bounce_rate">
+                                            <div class="visitor_top">
+                                                <div class="visitor_info Brate">
+                                                    <h2 class="visitor_count">30%</h2>
+                                                    <p class="visitor_counter">Bounce Rate</p>
+                                                </div>
+                                                <div class="visitor_icon">
+                                                    <i class="fa-solid fa-chart-simple"></i>
+                                                </div>
+                                            </div>
+                                            <div class="visitor_bottom">
+                                                <a href="#" class="visitor_link">
+                                                    <span>More info</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Students -->
+                                    <div class="students_main">
+
+                                        <div class="student_inner">
+                                            <!-- Single Activity -->
+                                            <div class="stident_activity_single">
+                                                <p class="s_count">1250</p>
+                                                <h3 class="S_title">Total Students</h3>
+                                            </div>
+                                            <!-- Single Activity -->
+                                            <div class="stident_activity_single">
+                                                <p class="s_count">50</p>
+                                                <h3 class="S_title">Active Students</h3>
+                                            </div>
+                                            <!-- Single Activity -->
+                                            <div class="stident_activity_single">
+                                                <p class="s_count">40</p>
+                                                <h3 class="S_title">Job Success</h3>
+                                            </div>
+                                            <!-- Single Activity -->
+                                            <div class="stident_activity_single">
+                                                <p class="s_count">60%</p>
+                                                <h3 class="S_title">Completion Rate</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Todos -->
+                                    <div class="todos_main">
+                                        <div class="todos_inner">
+
+                                            <!-- Task List -->
+                                            <div class="todo_left">
+                                                <div class="task_head">
+                                                    <div class="task_iconM">
+                                                        <i class="fa-solid fa-database fa-fw"></i>
+                                                    </div>
+                                                    <h4 class="taskHeadContent">Task List</h4>
+                                                </div>
+                                                <div class="task_body">
+                                                    <!-- Task Single Person-->
+                                                    <div class="task_single">
+                                                        <div class="assine_to">
+                                                            <div class="worker_img">
+                                                                <img src="./asset/images/profile/Anower.jpg" alt="Anower">
+                                                            </div>
+                                                            <div class="worker_name_designation">
+                                                                <h2 class="worker_name">Md Anower Hossan</h2>
+                                                                <p class="worker_designation">Frontened Designer</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="task_list_group">
+                                                            <!-- Single task -->
+                                                            <li class="task_item">
+                                                                <div class="tasks">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="#" id="#" />
+                                                                    </div>
+                                                                    <div class="task_content">
+                                                                        <h4 class="task_name">Task Title</h4>
+                                                                        <p class="task_details">Lorem ipsum dolor sit amet.</p>                                
+                                                                        <div class="assigned_by">
+                                                                            <p class="asigned_indicate">By</p>
+                                                                            <p class="assigner_name">Salman Md Sultan</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Task Action  -->
+                                                                <div class="actions">
+                                                                    <!-- Edit btn -->
+                                                                    <button class="admin_edit tasksEdit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                                    <!-- Edit modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail3" class="form-label">Class contity</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                                    <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                                </div>
+                                                                                <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Delete button -->
+                                                                    <button class="admin_delete tasksDelete"><i class="fa-solid fa-trash"></i></button>
+                                                                    <!-- Delete notify modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Course ID" disabled>
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                                </div>
+                                                                                
+                                                                                <div class="Dmodal_close_div">
+                                                                                    <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                                    <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                                </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Single task -->
+                                                            <li class="task_item">
+                                                                <div class="tasks">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="#" id="#" />
+                                                                    </div>
+                                                                    <div class="task_content">
+                                                                        <h4 class="task_name">Task Title</h4>
+                                                                        <p class="task_details">Lorem ipsum dolor sit amet.</p>                                
+                                                                        <div class="assigned_by">
+                                                                            <p class="asigned_indicate">By</p>
+                                                                            <p class="assigner_name">Salman Md Sultan</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Task Action  -->
+                                                                <div class="actions">
+                                                                    <!-- Edit btn -->
+                                                                    <button class="admin_edit tasksEdit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                                    <!-- Edit modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail3" class="form-label">Class contity</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                                    <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                                </div>
+                                                                                <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Delete button -->
+                                                                    <button class="admin_delete tasksDelete"><i class="fa-solid fa-trash"></i></button>
+                                                                    <!-- Delete notify modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Course ID" disabled>
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                                </div>
+                                                                                
+                                                                                <div class="Dmodal_close_div">
+                                                                                    <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                                    <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                                </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <!-- Task Single Person-->
+                                                    <div class="task_single">
+                                                        <div class="assine_to">
+                                                            <div class="worker_img">
+                                                                <img src="./asset/images/profile/Anower.jpg" alt="Anower">
+                                                            </div>
+                                                            <div class="worker_name_designation">
+                                                                <h2 class="worker_name">Md Anower Hossan</h2>
+                                                                <p class="worker_designation">Frontened Designer</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="task_list_group">
+                                                            <!-- Single task -->
+                                                            <li class="task_item">
+                                                                <div class="tasks">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="#" id="#" />
+                                                                    </div>
+                                                                    <div class="task_content">
+                                                                        <h4 class="task_name">Task Title</h4>
+                                                                        <p class="task_details">Lorem ipsum dolor sit amet.</p>                                
+                                                                        <div class="assigned_by">
+                                                                            <p class="asigned_indicate">By</p>
+                                                                            <p class="assigner_name">Salman Md Sultan</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Task Action  -->
+                                                                <div class="actions">
+                                                                    <!-- Edit btn -->
+                                                                    <button class="admin_edit tasksEdit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                                    <!-- Edit modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail3" class="form-label">Class contity</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                                    <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                                </div>
+                                                                                <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Delete button -->
+                                                                    <button class="admin_delete tasksDelete"><i class="fa-solid fa-trash"></i></button>
+                                                                    <!-- Delete notify modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Course ID" disabled>
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                                </div>
+                                                                                
+                                                                                <div class="Dmodal_close_div">
+                                                                                    <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                                    <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                                </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Single task -->
+                                                            <li class="task_item">
+                                                                <div class="tasks">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="#" id="#" />
+                                                                    </div>
+                                                                    <div class="task_content">
+                                                                        <h4 class="task_name">Task Title</h4>
+                                                                        <p class="task_details">Lorem ipsum dolor sit amet.</p>                                
+                                                                        <div class="assigned_by">
+                                                                            <p class="asigned_indicate">By</p>
+                                                                            <p class="assigner_name">Salman Md Sultan</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Task Action  -->
+                                                                <div class="actions">
+                                                                    <!-- Edit btn -->
+                                                                    <button class="admin_edit tasksEdit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                                    <!-- Edit modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Edit course title</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail1" class="form-label">Course ID</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail" class="form-label">Course name</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmailp" class="form-label">Course price</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmailp" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputEmail3" class="form-label">Class contity</label>
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="exampleInputPassword1" class="form-label">Image upload</label>
+                                                                                    <input type="file" class="form-control" id="exampleInputPassword1">
+                                                                                </div>
+                                                                                <button type="submit" class="btn btn_blue AGMS">Submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Delete button -->
+                                                                    <button class="admin_delete tasksDelete"><i class="fa-solid fa-trash"></i></button>
+                                                                    <!-- Delete notify modal -->
+                                                                    <div class="Agallery_modal">
+                                                                        <div class="Agallery_modal_inner">
+
+                                                                            <!-- Modal header -->
+                                                                            <div class="Agallery_modal_header">
+                                                                                <h3 class="AGMH p_header_top">Do you wat to delete?</h3>
+                                                                                <button class="AGMclose"><i class="fa-solid fa-xmark"></i></button>
+                                                                            </div>
+
+                                                                            <!-- MOdal body -->
+                                                                            <div class="Agallery_modal_body">
+                                                                                <form>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Course ID" disabled>
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="Course name" disabled>
+                                                                                </div>
+                                                                                
+                                                                                <div class="Dmodal_close_div">
+                                                                                    <button type="submit" class="btn btn_light AGMC">Close</button>
+                                                                                    <button type="submit" class="btn btn_red AGMD">Delete</button>
+                                                                                </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Chat box -->
+                                            <div class="todo_right">
+                                                <div class="task_head">
+                                                    <div class="task_iconM">
+                                                        <i class="fa-brands fa-rocketchat"></i>
+                                                    </div>
+                                                    <h4 class="taskHeadContent">Chat box</h4>
+                                                </div>
+                                                <div class="task_body massage_body">
+                                                    <!-- massager -->
+                                                    <div class="massage_single">
+                                                        <div class="massage_img ">
+                                                            <img src="./asset/images/profile/Anower.jpg" alt="" class="massage_images">
+                                                        </div>
+                                                        <div class="massage_text">
+                                                            <!-- massager text -->
+                                                            <p class="massages_text_inner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illum accusantium molestias ex dolorem quam, laudantium, voluptates repudiandae fugiat sed voluptatibus! Itaque pariatur nobis maiores earum sunt. Dolores, quisquam neque!</p>
+                                                            
+                                                            <!-- massager date -->
+                                                            <div class="massager_date">
+                                                                <i class="fa-solid fa-calendar-days fa-fw"></i>
+                                                                <span class="massageDate">12: 00 | Yesterday</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- replayer -->
+                                                    <div class="massage_single">
+                                                        <div class="massage_text replay">
+                                                            <!-- massager text -->
+                                                            <p class="massages_text_inner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illum accusantium molestias ex dolorem quam, laudantium, voluptates repudiandae fugiat sed voluptatibus! Itaque pariatur nobis maiores earum sunt. Dolores, quisquam neque!</p>
+                                                            
+                                                            <!-- massager date -->
+                                                            <div class="massager_date">
+                                                                <i class="fa-solid fa-calendar-days fa-fw"></i>
+                                                                <span class="massageDate">12: 00 | Yesterday</span>
+                                                            </div>
+                                                        </div>
+                                                        <img src="./asset/images/profile/profile1(1).png" alt="" class="massage_images">
+                                                    </div>
+
+                                                    <!-- massager -->
+                                                    <div class="massage_single">
+                                                        <div class="massage_img ">
+                                                            <img src="./asset/images/profile/Anower.jpg" alt="" class="massage_images">
+                                                        </div>
+                                                        <div class="massage_text">
+                                                            <!-- massager text -->
+                                                            <p class="massages_text_inner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illum accusantium molestias ex dolorem quam, laudantium, voluptates repudiandae fugiat sed voluptatibus! Itaque pariatur nobis maiores earum sunt. Dolores, quisquam neque!</p>
+                                                            
+                                                            <!-- massager date -->
+                                                            <div class="massager_date">
+                                                                <i class="fa-solid fa-calendar-days fa-fw"></i>
+                                                                <span class="massageDate">12: 00 | Yesterday</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- replayer -->
+                                                    <div class="massage_single">
+                                                        <div class="massage_text replay">
+                                                            <!-- massager text -->
+                                                            <p class="massages_text_inner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illum accusantium molestias ex dolorem quam, laudantium, voluptates repudiandae fugiat sed voluptatibus! Itaque pariatur nobis maiores earum sunt. Dolores, quisquam neque!</p>
+                                                            
+                                                            <!-- massager date -->
+                                                            <div class="massager_date">
+                                                                <i class="fa-solid fa-calendar-days fa-fw"></i>
+                                                                <span class="massageDate">12: 00 | Yesterday</span>
+                                                            </div>
+                                                        </div>
+                                                        <img src="./asset/images/profile/profile1(1).png" alt="" class="massage_images">
+                                                    </div>
+                                                </div>
+                                                <div class="admin_chat_footer">
+                                                    <input type="text" class="write_massage">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Promotion -->
+                                    <div class="promotion_main">
+                                        <div class="promotion_inner">
+
+                                            <!-- Promotion header
+                                            <div class="pormotion_header">
+                                                h2.promotion_tgitle{Promotion }
+                                            </div> -->
+
+                                            <!-- Promotion content -->
+                                            <div class="pormotion_body">
+                                                <!-- Live promotion -->
+                                                <div class="live_promotion single_pro">
+                                                    <div class="live_head">
+                                                        <h3 class="liveHtrxt">Previous Promotion</h3>
+                                                    </div>
+                                                    <div class="live_body">
+                                                        <img src="./asset/images/promotion/pl.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <!-- Previus promotion -->
+                                                <div class="previous_promotion single_pro">
+                                                    <div class="live_head">
+                                                        <h3 class="liveHtrxt">Live Promotion</h3>
+                                                    </div>
+                                                    <div class="live_body">
+                                                        <img src="./asset/images/promotion/n.jpg" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Webinar -->
+                                                <div class="previous_promotion single_pro">
+                                                    <div class="live_head">
+                                                        <h3 class="liveHtrxt">Upcomming webinar</h3>
+                                                    </div>
+                                                    <div class="live_body">
+                                                        <img src="./asset/images/promotion/webiner.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>1
+            </div>
+        </div>
+    </section>
+
+    <!------------- Bootstrap JS ----------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <!------- Jquery cdn ------>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
+    <!-- ------------ Custom js --------- -->
+    {% comment %} <script src="./asset/js/script.js"></script> {% endcomment %}
+    
+    <!-- script add start (Mamun)-->
+    <script src="{% static 'asset/js/script.js' %}"></script> 
+    <!-- script end (Mamun)-->
+</body>
+</html>
