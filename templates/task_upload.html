@@ -237,9 +237,12 @@
                                                     <td class="img_tb_data">{{i.name}}</td>
                                                     <td class="img_tb_data"><img src="{{i.image.url}}" alt="img"></td>
                                                     <td class="img_tb_data action">
+                                                        <a class="admin_edit" href="{% url 'edit_customer_url' i.id%}">Edit</a>   
+                                                        <!-- edit by custom_id -->
+                                                        {% comment %} <!--<a class="admin_edit" href="{% url 'edit_customer_url' i.custom_id%}">Edit custom_id</a>  -->  {% endcomment %}
 
                                                         <!-- Edit button -->
-                                                        <button class="admin_edit" id="Gedit_1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        {% comment %} <button class="admin_edit" id="Gedit_1"><i class="fa-solid fa-pen-to-square"></i></button>
                                                         <!-- Edit modal -->
                                                         <div class="Agallery_modal">
                                                             <div class="Agallery_modal_inner">
@@ -300,7 +303,7 @@
                                                                     </form>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> {% endcomment %}
 
                                                     </td>
                                                 </tr>

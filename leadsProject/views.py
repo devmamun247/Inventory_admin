@@ -1,8 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render,redirect
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Customer, CustomerImageMany
-from datetime import date
+from datetime import date,datetime
 
 
 def insert (req):
@@ -75,6 +75,59 @@ def insert (req):
     ## return render(req, 'task_upload.html')
     #return redirect('task_upload_url_submit')
 
+
+def customer_update (req):
+    uid = req.POST.get('id')
+    name = req.POST.get('name')
+    designation = req.POST.get('designation')
+    phone = req.POST.get('phone')
+    custom_id = req.POST.get('custom_id')
+    email = req.POST.get('email')
+    linkedin = req.POST.get('linkedin')
+    fb = req.POST.get('fb')
+    country = req.POST.get('country')
+    address = req.POST.get('address')
+    dob1 = req.POST.get('dob')
+    dob = str(dob1)
+
+    image = req.FILES.get('image') 
+
+
+    # Save customer object
+    cust_obj = get_object_or_404(Customer, id=uid)
+    cust_obj.custom_id=custom_id,
+    cust_obj.name=name,
+    cust_obj.designation=designation,
+    cust_obj.phone=phone,
+    cust_obj.email=email,
+    cust_obj.linkedin=linkedin,
+    cust_obj.facebook=fb,
+    cust_obj.country=country,
+    cust_obj.address=address,
+    cust_obj.dob=dob,
+    cust_obj.image = image 
+    
+    cust_obj.save()
+
+    # Handle multiple files
+    imagesmultiple = req.FILES.getlist('image_many')  # getlist will get all the files uploaded
+
+    # Save each image and associate with the customer
+    for img in imagesmultiple:
+        customer_image = CustomerImageMany(image_many=img)
+        customer_image.save()
+        cust_obj.image_many.add(customer_image)  # Add image to the customer
+
+    return redirect('task_upload_url_submit')
+
+def edit_customer(req,uid):
+    single_instance_get_data =Customer.objects.get(id=uid) # here id is customer table column id 
+    # print(single_instance_get_data.name)
+    data = {"d": single_instance_get_data}
+    # return HttpResponse(id)
+    return render(req, 'edit_customer.html', data)
+
+
 def show(req):
     customer_data = Customer.objects.all() # select * from customer
     data = {'d': customer_data}
@@ -86,6 +139,7 @@ def show(req):
          print(f"Name: {i.name}, Image: {i.image.url if i.image else 'No image'}")
     return render(req,'task_upload.html', data)
     # return HttpResponse("this is customer data")
+
 
 
 def index (req):

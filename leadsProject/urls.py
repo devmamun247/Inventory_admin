@@ -30,7 +30,10 @@ urlpatterns = [
     #path('demo2', views.demo2), # it's default admin page (Mamun)
     # path('', views.index), # it's goes to admin action views controller index method (Mamun)
     # path('', views.index, name='task_upload_url'), 
-    path('', views.index, name='task_upload_url_submit'), 
+    path('', views.show, name='task_upload_url_submit'), 
     path('admin/customer/insert', views.insert, name='customer_insert'),
     path('admin/customer/view', views.show, name='show_customer_data'),
+    path('admin/customer/edit/<int:uid>', views.edit_customer, name='edit_customer_url'),
+    path('admin/customer/update', views.customer_update, name='customer_update'),
+    #path('admin/customer/edit/<str:uid>', views.edit_customer, name='edit_customer_url'), #edit by customer id
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
